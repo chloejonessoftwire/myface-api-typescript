@@ -22,10 +22,11 @@ export async function countUsers(page: number, pageSize: number): Promise<number
 }
 
 export async function getUser(userId: number): Promise<User> {
+    console.log(userId)
     const users = await database<User>('users')
         .select('*')
         .where('id', userId);
-
+    console.log(users)
     return single(users);
 }
 

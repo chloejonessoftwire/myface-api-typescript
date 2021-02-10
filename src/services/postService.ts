@@ -17,6 +17,7 @@ export async function getPageOfPosts(page: number, pageSize: number): Promise<Pa
     // but that's quite a lot of effort without support from an ORM...
     // and we should get away with it for small local databases like ours.
     const postModels = await Promise.all(posts.map(toPostModel));
+    console.log("4")
 
     return {
         results: postModels,
